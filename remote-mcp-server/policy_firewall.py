@@ -73,7 +73,6 @@ _CONFUSABLE_ASCII_TRANSLATION = str.maketrans(
         "Υ": "u",
         "υ": "u",
         "ν": "v",
-        "Ν": "n",
         "Ѕ": "s",
         "ѕ": "s",
         "У": "y",
@@ -684,7 +683,7 @@ class Level2StrictFirewall:
         )
         infra_adjacent_density_hit_count = 0
 
-        for category, spec in self.rules.items():
+        for category, _spec in self.rules.items():
             patterns = self._compiled_patterns.get(category, ())
             matched_blocked_terms = _matched_terms(
                 self._compiled_terms.get(category, {}).get("blocked_terms", ()),

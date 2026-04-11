@@ -4,6 +4,36 @@ This repository contains a small Python client and a matching MCP server that sh
 
 BoundaryGate is the shared preflight gate. It inspects text before any model or tool call, returns a refusal payload on a tripwire, and otherwise allows the request to proceed.
 
+## Invitation to Break It
+
+This is a minimal, deterministic pre-egress firewall. I am deliberately not treating it as a finished product.
+
+I want people to attack it from every angle possible at the universal thinking level. Try to bypass the normalizer, craft novel evasion techniques, find edge cases, or redesign the concept entirely. Break it severely. Improve it radically.
+
+If you create a better version, please keep the original name BoundaryGate or deterministic-boundary-firewall in the credits, and link back to this repo:
+
+https://github.com/SerhatSoruklu/deterministic-boundary-firewall
+
+## Why This Repo Exists & My Honest Request
+
+I built BoundaryGate because I want a truly deterministic, pre-egress firewall that is as close to bulletproof as possible. But I'm just one person. I can't test every attack vector, every obfuscation trick, every future evasion technique, or scale it alone.
+
+So I'm leaving this repo exactly as it is under MIT, frozen, with no more edits from me.
+
+My request to the community:
+
+Attack it mercilessly. Break it from every angle. Use every universal thinking level trick you know, including spacing, homoglyphs, encoding, semantic bypasses, timing attacks, transport tricks, and whatever else you can come up with. Prove where the current normalizer and refusal logic fail.
+
+Then make it stronger. Redesign parts. Rewrite it. Turn the simple deterministic idea into something much closer to bulletproof.
+
+If you improve it, please credit Serhat Soruklu as the original creator of BoundaryGate / deterministic-boundary-firewall and link back to this repo:
+
+https://github.com/SerhatSoruklu/deterministic-boundary-firewall
+
+The goal is collective evolution toward a genuinely robust deterministic pre-egress firewall.
+
+I'm one person. Together we can push it much further. Break it hard, and make it better in my name.
+
 What BoundaryGate means in this repo:
 
 - `blocked_terms` are the exact configured terms that matched, not semantic extraction
@@ -15,10 +45,14 @@ What BoundaryGate means in this repo:
 
 ## Proof Map
 
-- Firewall tests prove normalization, refusal payload shape, and the bounded rule kernel.
-- Transport tests prove pre-egress interception and no-network-on-refusal behavior.
-- Server contract tests prove client/server parity and manifest/runtime alignment.
-- Live smoke tests prove the real streamable HTTP MCP surface when the runtime is installed.
+![Proof Map](proof-map/ProofMap.png)
+
+| Layer | What it proves |
+| --- | --- |
+| Firewall tests | Normalization, refusal payload shape, and the bounded rule kernel. |
+| Transport tests | Pre-egress interception and no-network-on-refusal behavior. |
+| Server contract tests | Client/server parity and manifest/runtime alignment. |
+| Live smoke tests | The real streamable HTTP MCP surface when the runtime is installed. |
 
 ## Canonical Release Gate
 

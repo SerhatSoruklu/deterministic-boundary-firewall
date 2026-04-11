@@ -1,0 +1,11 @@
+[MASTER]
+ignore-patterns=^\.git$
+
+[MESSAGES CONTROL]
+disable=consider-using-with,duplicate-code,import-outside-toplevel,invalid-name,line-too-long,missing-class-docstring,missing-function-docstring,missing-module-docstring,protected-access,too-many-locals,too-many-public-methods,unused-argument,wrong-import-order,wrong-import-position,unused-import
+
+[FORMAT]
+max-line-length=100
+
+[TYPECHECK]
+ignored-modules=mcp,mcp.client,mcp.client.streamable_http,mcp.server,mcp.server.fastmcp

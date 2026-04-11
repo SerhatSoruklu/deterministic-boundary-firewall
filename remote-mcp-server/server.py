@@ -2,7 +2,7 @@ from pathlib import Path
 from typing import Any
 import sys
 
-from mcp.server.fastmcp import FastMCP # type: ignore
+from mcp.server.fastmcp import FastMCP  # pylint: disable=import-error
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
