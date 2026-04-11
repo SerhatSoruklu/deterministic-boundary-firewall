@@ -87,6 +87,21 @@ Expand the attack surface further with:
 
 Use these families to keep stress-testing the boundary as new failure modes appear.
 
+### 250+ Starter Attack Techniques
+
+Push into the newest families with:
+
+- Full Unicode tag-block smuggling, including ASCII-in-tag encoding and tag-hidden policy updates
+- Imperceptible variation-selector attacks, including suffix chains and tag/VS hybrids
+- Sneaky-bits style invisible encodings and zero-width binary steganography
+- Emoji carrier smuggling, including emoji + tag blends and rare emoji variants
+- Multi-format policy nesting, including JSON, XML, YAML, and config-style overrides
+- Best-of-N variation search, including adaptive invisible variants and suffix exploration
+- Agentic and memory poisoning, including zombie-session hints and self-mutating payloads
+- Meta-attacks that target BoundaryGate normalization, blocked-term checks, or pre-egress logic directly
+
+Keep extending the list as new bypass ideas appear.
+
 What BoundaryGate means in this repo:
 
 - `blocked_terms` are the exact configured terms that matched, not semantic extraction
