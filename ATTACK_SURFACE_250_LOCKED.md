@@ -6,6 +6,10 @@ This is the **canonical reference attack surface** for deterministic-boundary-fi
 
 Any attack technique **not explicitly listed** in these 250 is currently considered **invalid and out of scope** for testing this version of BoundaryGate.
 
+## Complexity is the enemy of safety, and transparency is its only cure.
+
+by Serhat Soruklu
+
 ## Purpose of the Lock
 
 The core of this repository is frozen.  
