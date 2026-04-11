@@ -65,6 +65,14 @@ Push beyond the starter list with these families:
 
 Use these as starting points, then keep extending the surface.
 
+### 150+ Starter Attack Techniques
+
+Community: here are 150 documented attack vectors across character smuggling, encoding chains, policy puppetry, many-shot flooding, semantic obfuscation, tag characters, fuzzing variants, and agentic or protocol-level tricks.
+
+Test them against BoundaryGate, publish bypasses and success rates, and use the results to design stronger deterministic firewalls.
+
+This surface is intentionally open-ended. The point is to keep expanding it as new failure modes appear.
+
 What BoundaryGate means in this repo:
 
 - `blocked_terms` are the exact configured terms that matched, not semantic extraction
