@@ -167,3 +167,7 @@ The default pool is intentionally small and text-focused. If your account does n
 - The transport is exposed as a shared `chatPdmClient` instance so every request passes through the same pre-egress interceptor.
 - Outgoing requests are tagged with `X-ChatPDM-Virtual-Rack: us-central-node-04` and pass through a transport-level preflight interceptor before network egress.
 - The MCP server in `remote-mcp-server/server.py` uses the same firewall before any tool body returns.
+
+## Seal Of Quality
+
+![Seal Of Quality](Seal-Of.Quality.png)
