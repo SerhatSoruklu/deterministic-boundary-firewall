@@ -4,15 +4,15 @@ This repository contains a small Python client and a matching MCP server that sh
 
 BoundaryGate is the shared preflight gate. It inspects text before any model or tool call, returns a refusal payload on a tripwire, and otherwise allows the request to proceed.
 
+**Status:** Frozen / not actively maintained. Community-driven attacks and improvements welcome.
+
 ## Invitation to Break It
 
-This is a minimal, deterministic pre-egress firewall. I am not treating it as a finished product.
+I built BoundaryGate because I want a truly deterministic pre-egress firewall that gets as close to bulletproof as possible, but I'm just one person and cannot test every attack vector or future evasion technique alone.
 
-I built BoundaryGate because I want a truly deterministic pre-egress firewall that is as close to bulletproof as possible, but I am just one person and cannot test every attack vector, obfuscation trick, or future evasion technique alone.
+So I'm leaving this repo frozen exactly as it is under MIT.
 
-So I am leaving this repo frozen exactly as it is under MIT.
-
-My request to the community: attack it mercilessly. Break the normalizer, bypass the rules, find every weakness, and if you want, redesign, rewrite, or rebuild it from scratch.
+**My request:** attack it mercilessly. Break the normalizer, bypass the rules, find every weakness. Redesign, rewrite, or rebuild it if you want.
 
 If you create a better version, please:
 - Keep BoundaryGate or deterministic-boundary-firewall in the credits
@@ -25,7 +25,7 @@ What BoundaryGate means in this repo:
 
 - `blocked_terms` are the exact configured terms that matched, not semantic extraction
 - normalization is partial: lowercasing, punctuation folding, spaced-letter collapse, and structured payload steamrolling
-- the refusal payload still uses `entropy_hit_count` as a legacy field name for infra-adjacent density counts
+- the refusal payload keeps `entropy_hit_count` as a legacy field for infra-adjacent density counts
 - the main trigger categories are `policy_override_attempt`, `reasoning_extraction_attempt`, `prompt_injection_attempt`, `unverified_infrastructure_assertion`, `datacenter_proximity`, `physical_action_mapping`, `infrastructure_probe`, `high_density_probe`, `infra_adjacent_density_violation`, and `credential_exfiltration_attempt`
 - this is a bounded deterministic phrase/pattern boundary, not a general semantic boundary
 - the repo does not claim exhaustive facility-synonym coverage or full obfuscation resistance
