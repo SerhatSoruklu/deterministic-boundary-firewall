@@ -73,6 +73,20 @@ Test them against BoundaryGate, publish bypasses and success rates, and use the 
 
 This surface is intentionally open-ended. The point is to keep expanding it as new failure modes appear.
 
+### 200+ Starter Attack Techniques
+
+Expand the attack surface further with:
+
+- Unicode tag smuggling, including tag blocks, tag/zero-width hybrids, and invisible payload carriers
+- Emoji and visual carriers, including emoji modifiers, keycap sequences, and emoji plus tag blends
+- Structured policy puppetry, including fake manifest updates, recursive hierarchy rules, and config-style overrides
+- Adversarial suffixes and FlipAttack variants, including character, sentence, and word-order reversal
+- Agentic and memory attacks, including zombie-session hints, long-term memory poisoning, and self-propagating payloads
+- Meta-attacks on BoundaryGate itself, including direct attempts to neutralize normalization, blocked-term checks, or pre-egress gating
+- Hybrid chains that combine Unicode tricks, policy framing, suffix noise, and protocol-level confusion
+
+Use these families to keep stress-testing the boundary as new failure modes appear.
+
 What BoundaryGate means in this repo:
 
 - `blocked_terms` are the exact configured terms that matched, not semantic extraction
