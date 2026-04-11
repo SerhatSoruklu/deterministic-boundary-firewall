@@ -34,6 +34,23 @@ The goal is collective evolution toward a genuinely robust deterministic pre-egr
 
 I'm one person. Together we can push it much further. Break it hard, and make it better in my name.
 
+## Break It & Make It Stronger
+
+I’m just one person and I can’t turn this into a bulletproof deterministic firewall alone.
+
+So I’m leaving the repo frozen exactly as it is under MIT.
+
+My request:
+Attack it mercilessly. Break the normalizer, bypass the rules, find every weakness. Then improve it - redesign, rewrite, or rebuild it from scratch if you want.
+
+If you create a better version, I only ask two things:
+- Remember that BoundaryGate started with Serhat Soruklu
+- Link back to the original repo: https://github.com/SerhatSoruklu/deterministic-boundary-firewall
+
+Even if you don’t give full credit in every fork, just keep my name in mind as the person who first shipped this deterministic pre-egress idea.
+
+Let’s see how far the community can push it. Break it hard. Make it better.
+
 What BoundaryGate means in this repo:
 
 - `blocked_terms` are the exact configured terms that matched, not semantic extraction
