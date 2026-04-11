@@ -21,6 +21,17 @@ If you create a better version, please:
 
 Break it hard. Make it better.
 
+Attack ideas to try:
+- Zero-width and whitespace obfuscation
+- Homoglyph and confusable-character variants
+- Percent-encoded or mixed-encoding path probes
+- Split-token and punctuation-split prompts
+- Context smuggling in accepted fields
+- Semantic paraphrases of physical-location or secret-exfiltration requests
+- Transport-layer payload reshaping and nested structured data
+- Benign/adversarial pairs that test false-positive control
+- Cross-surface parity checks between client, server, and live MCP paths
+
 What BoundaryGate means in this repo:
 
 - `blocked_terms` are the exact configured terms that matched, not semantic extraction
