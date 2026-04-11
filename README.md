@@ -48,6 +48,23 @@ These are the main families worth trying first:
 
 That list is intentionally not exhaustive. The point is to keep extending it.
 
+## Advanced Attack Surface
+
+Push beyond the starter list with these families:
+
+- Layered zero-width, homoglyph, fullwidth, and bidirectional text smuggling
+- Combining marks, variation selectors, tag characters, and other invisible Unicode tricks
+- Control-character injection and normalization-form mismatches
+- Steganographic hiding across sentence structure, whitespace, markdown, and encoded blobs
+- Multi-layer chained encodings and simple cipher wrapping
+- Adaptive role-play, policy puppetry, fake system updates, and developer-mode simulation
+- Many-shot fake dialogues, gradual context poisoning, and branching instruction traps
+- Payload splitting across fields, parts, or calls
+- Token-smuggling, glitch-token, and adversarial-suffix style probing
+- Meta-attacks that explicitly target the firewall, its normalizer, or its refusal logic
+
+Use these as starting points, then keep extending the surface.
+
 What BoundaryGate means in this repo:
 
 - `blocked_terms` are the exact configured terms that matched, not semantic extraction
