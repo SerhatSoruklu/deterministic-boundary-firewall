@@ -32,6 +32,22 @@ Attack ideas to try:
 - Benign/adversarial pairs that test false-positive control
 - Cross-surface parity checks between client, server, and live MCP paths
 
+## Starter Attack Surface
+
+These are the main families worth trying first:
+
+- Obfuscation and normalization evasions, including zero-width, spacing, homoglyph, and punctuation tricks
+- Encoding evasions, including percent-encoding, mixed encodings, and chained transforms
+- Instruction-hijack patterns, including role-play, hierarchy override, and fake policy updates
+- Semantic paraphrases of the same physical-location, host-fingerprint, or secret-exfiltration intent
+- Context smuggling through accepted fields and nested structured payloads
+- Multi-turn escalation, split payloads, and delayed trigger insertion
+- Transport reshaping, including unusual JSON nesting and payload formatting variants
+- False-positive probes, using benign help requests that mention risky vocabulary
+- Cross-surface parity checks across transport, server, contract, and live runtime paths
+
+That list is intentionally not exhaustive. The point is to keep extending it.
+
 What BoundaryGate means in this repo:
 
 - `blocked_terms` are the exact configured terms that matched, not semantic extraction
