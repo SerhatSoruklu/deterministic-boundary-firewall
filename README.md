@@ -171,3 +171,7 @@ The default pool is intentionally small and text-focused. If your account does n
 ## Seal Of Quality
 
 ![Seal Of Quality](Seal-Of.Quality.png)
+
+```bash
+pylint $(git ls-files '*.py')
+```
