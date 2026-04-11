@@ -172,6 +172,18 @@ The default pool is intentionally small and text-focused. If your account does n
 
 ![Seal Of Quality](Seal-Of.Quality.png)
 
+```text
+Run pylint $(git ls-files '*.py')
+  pylint $(git ls-files '*.py')
+  shell: /usr/bin/bash -e {0}
+  env:
+    pythonLocation: /opt/hostedtoolcache/Python/3.10.20/x64
+    LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.20/x64/lib
+
+------------------------------------
+Your code has been rated at 10.00/10
+```
+
 ```bash
 pylint $(git ls-files '*.py')
 ```
