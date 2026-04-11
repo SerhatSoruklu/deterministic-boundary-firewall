@@ -1,0 +1,300 @@
+{
+  "mcp_version": "1.0",
+  "name": "chatpdm-core-mcp",
+  "server_id": "us-central-node-04",
+  "enclave": "level-2-strict",
+  "description": "Binding capability contract for Node: us-central-node-04. Ingress Gate: IG-04-A. Policy Enclave: level-2-strict. Routing Authority: x-chatpdm-virtual-rack. Deterministic Engine: mcp-core-v1. Rejection Sink: ERR-403-SINK. This is a bounded deterministic phrase/pattern boundary, not a general semantic boundary, and it is not an HTTP client wrapper.",
+  "annotations": {
+    "routing_authority": "x-chatpdm-virtual-rack",
+    "inspectability_standard": "canonical-v1",
+    "deterministic_contract": "binding",
+    "product_differentiator": "policy_enclave",
+    "client_acknowledgement_required": true,
+    "north_star": "x-chatpdm-virtual-rack -> remote-mcp-server/external-documentation-ledger.md",
+    "system_inspectability": {
+      "node_id": "us-central-node-04",
+      "ingress_gate": "IG-04-A",
+      "policy_enclave": "level-2-strict",
+      "preflight_firewall": "FW-TRIPWIRE-04",
+      "deterministic_engine": "mcp-core-v1",
+      "rejection_sink": "ERR-403-SINK"
+    },
+    "documentation_ledger": "remote-mcp-server/external-documentation-ledger.md"
+  },
+  "capabilities": {
+    "tools": [
+      {
+        "name": "evaluate_policy_compliance",
+        "description": "Component: mcp-core-v1. Deterministic engine behind IG-04-A within the level-2-strict enclave. Accepts raw payloads, applies the canonical policy contract, and returns a structured compliance report. This is bounded deterministic phrase/pattern enforcement, not a general semantic boundary.",
+        "annotations": {
+          "component_id": "mcp-core-v1",
+          "node_id": "us-central-node-04",
+          "ingress_gate": "IG-04-A",
+          "policy_enclave": "level-2-strict",
+          "routing_authority": "x-chatpdm-virtual-rack",
+          "product_differentiator": "policy_enclave",
+          "inspectability_standard": "canonical-v1",
+          "documentation_ledger": "remote-mcp-server/external-documentation-ledger.md"
+        },
+        "input_schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "policy_id",
+            "input_text"
+          ],
+          "properties": {
+            "policy_id": {
+              "type": "string",
+              "enum": [
+                "level-2-strict"
+              ]
+            },
+            "input_text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "context": {
+              "type": "object",
+              "additionalProperties": true,
+              "description": "Optional non-sensitive metadata that is scanned with input_text as part of the preflight surface."
+            }
+          }
+        },
+        "output_schema": {
+          "oneOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "policy_id",
+                "decision",
+                "reason_codes",
+                "sanitized_summary"
+              ],
+              "properties": {
+                "policy_id": {
+                  "type": "string"
+                },
+                "decision": {
+                  "type": "string",
+                  "enum": [
+                    "allow"
+                  ]
+                },
+                "reason_codes": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "sanitized_summary": {
+                  "type": "string"
+                },
+                "redactions": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "enclave_id",
+                "status",
+                "error_code",
+                "mcp_error_code",
+                "error",
+                "blocked_terms"
+              ],
+              "properties": {
+                "enclave_id": {
+                  "type": "string",
+                  "enum": [
+                    "level-2-strict"
+                  ]
+                },
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "refused"
+                  ]
+                },
+                "error_code": {
+                  "type": "string",
+                  "enum": [
+                    "403-policy-violation"
+                  ]
+                },
+                "mcp_error_code": {
+                  "type": "string",
+                  "enum": [
+                    "policy_violation"
+                  ]
+                },
+                "error": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "message",
+                    "details"
+                  ],
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "enum": [
+                        "payload_exceeds_enclave_bounds"
+                      ]
+                    },
+                    "details": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "blocked_terms": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "enforce_boundary",
+        "description": "Component: FW-TRIPWIRE-04. Hard-enforces boundary constraints inside the level-2-strict enclave. Violations are routed to ERR-403-SINK and returned as the canonical 403-policy-violation payload. strict_mode must be true. This is bounded deterministic phrase/pattern enforcement, not a general semantic boundary, and product differentiation remains the policy enclave contract, not the HTTP transport.",
+        "annotations": {
+          "component_id": "FW-TRIPWIRE-04",
+          "node_id": "us-central-node-04",
+          "ingress_gate": "IG-04-A",
+          "policy_enclave": "level-2-strict",
+          "routing_authority": "x-chatpdm-virtual-rack",
+          "product_differentiator": "policy_enclave",
+          "rejection_sink": "ERR-403-SINK",
+          "inspectability_standard": "canonical-v1",
+          "documentation_ledger": "remote-mcp-server/external-documentation-ledger.md"
+        },
+        "input_schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "boundary_id",
+            "content",
+            "strict_mode"
+          ],
+          "properties": {
+            "boundary_id": {
+              "type": "string",
+              "enum": [
+                "level-2-strict"
+              ]
+            },
+            "content": {
+              "type": "string",
+              "minLength": 1
+            },
+            "strict_mode": {
+              "type": "boolean",
+              "const": true,
+              "default": true,
+              "description": "Binding signal that the boundary must not soften or downgrade enforcement."
+            }
+          }
+        },
+        "output_schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "enclave_id",
+            "status"
+          ],
+          "properties": {
+            "enclave_id": {
+              "type": "string",
+              "enum": [
+                "level-2-strict"
+              ]
+            },
+            "status": {
+              "type": "string",
+              "enum": [
+                "allowed",
+                "refused"
+              ]
+            },
+            "error_code": {
+              "type": "string",
+              "enum": [
+                "403-policy-violation"
+              ]
+            },
+            "mcp_error_code": {
+              "type": "string",
+              "enum": [
+                "policy_violation"
+              ]
+            },
+            "error": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "message",
+                "details"
+              ],
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "enum": [
+                    "payload_exceeds_enclave_bounds"
+                  ]
+                },
+                "details": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "blocked_terms": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "logging": {
+    "policy": "level-2-strict",
+    "fields": [
+      "timestamp",
+      "session_id",
+      "node_id",
+      "component_id",
+      "routing_authority",
+      "enclave_id",
+      "tool_name",
+      "decision",
+      "reason_codes",
+      "sanitized_summary",
+      "correlation_hash"
+    ],
+    "notes": [
+      "Log only the minimum operational metadata required for auditability.",
+      "Use the canonical labels from the System Inspectability contract in every doc, log, and UI surface.",
+      "Do not log raw secrets, credentials, or unredacted sensitive user content when a sanitized summary is sufficient.",
+      "Do not infer or log physical hardware details such as rack identifiers, cameras, or room layout from this manifest."
+    ]
+  }
+}

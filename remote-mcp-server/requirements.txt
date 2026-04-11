@@ -1,0 +1,3 @@
+# Model Context Protocol Python SDK.
+# FastMCP is provided by this package via `mcp.server.fastmcp`.
+mcp>=1.23.1,<2
