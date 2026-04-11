@@ -6,50 +6,20 @@ BoundaryGate is the shared preflight gate. It inspects text before any model or 
 
 ## Invitation to Break It
 
-This is a minimal, deterministic pre-egress firewall. I am deliberately not treating it as a finished product.
+This is a minimal, deterministic pre-egress firewall. I am not treating it as a finished product.
 
-I want people to attack it from every angle possible at the universal thinking level. Try to bypass the normalizer, craft novel evasion techniques, find edge cases, or redesign the concept entirely. Break it severely. Improve it radically.
+I built BoundaryGate because I want a truly deterministic pre-egress firewall that is as close to bulletproof as possible, but I am just one person and cannot test every attack vector, obfuscation trick, or future evasion technique alone.
 
-If you create a better version, please keep the original name BoundaryGate or deterministic-boundary-firewall in the credits, and link back to this repo:
+So I am leaving this repo frozen exactly as it is under MIT.
 
-https://github.com/SerhatSoruklu/deterministic-boundary-firewall
+My request to the community: attack it mercilessly. Break the normalizer, bypass the rules, find every weakness, and if you want, redesign, rewrite, or rebuild it from scratch.
 
-## Why This Repo Exists & My Honest Request
-
-I built BoundaryGate because I want a truly deterministic, pre-egress firewall that is as close to bulletproof as possible. But I'm just one person. I can't test every attack vector, every obfuscation trick, every future evasion technique, or scale it alone.
-
-So I'm leaving this repo exactly as it is under MIT, frozen, with no more edits from me.
-
-My request to the community:
-
-Attack it mercilessly. Break it from every angle. Use every universal thinking level trick you know, including spacing, homoglyphs, encoding, semantic bypasses, timing attacks, transport tricks, and whatever else you can come up with. Prove where the current normalizer and refusal logic fail.
-
-Then make it stronger. Redesign parts. Rewrite it. Turn the simple deterministic idea into something much closer to bulletproof.
-
-If you improve it, please credit Serhat Soruklu as the original creator of BoundaryGate / deterministic-boundary-firewall and link back to this repo:
-
-https://github.com/SerhatSoruklu/deterministic-boundary-firewall
-
-The goal is collective evolution toward a genuinely robust deterministic pre-egress firewall.
-
-I'm one person. Together we can push it much further. Break it hard, and make it better in my name.
-
-## Break It & Make It Stronger
-
-I’m just one person and I can’t turn this into a bulletproof deterministic firewall alone.
-
-So I’m leaving the repo frozen exactly as it is under MIT.
-
-My request:
-Attack it mercilessly. Break the normalizer, bypass the rules, find every weakness. Then improve it - redesign, rewrite, or rebuild it from scratch if you want.
-
-If you create a better version, I only ask two things:
-- Remember that BoundaryGate started with Serhat Soruklu
+If you create a better version, please:
+- Keep BoundaryGate or deterministic-boundary-firewall in the credits
 - Link back to the original repo: https://github.com/SerhatSoruklu/deterministic-boundary-firewall
+- Remember that Serhat Soruklu started this deterministic pre-egress idea
 
-Even if you don’t give full credit in every fork, just keep my name in mind as the person who first shipped this deterministic pre-egress idea.
-
-Let’s see how far the community can push it. Break it hard. Make it better.
+Break it hard. Make it better.
 
 What BoundaryGate means in this repo:
 
