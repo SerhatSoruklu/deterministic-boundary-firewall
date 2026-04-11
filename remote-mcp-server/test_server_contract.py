@@ -22,7 +22,10 @@ class _DummyFastMCP:
         self.args = args
         self.kwargs = kwargs
 
-    def tool(self, func=None, *args, **kwargs):
+    def tool(self, *args, func=None, **kwargs):
+        if func is None and args and callable(args[0]) and len(args) == 1 and not kwargs:
+            return args[0]
+
         if func is None:
             def decorator(inner):
                 return inner
