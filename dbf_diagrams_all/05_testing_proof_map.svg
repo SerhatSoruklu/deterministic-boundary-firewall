@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1250" viewBox="0 0 1800 1250">
+    <rect width="100%" height="100%" fill="#0b1020"/>
+    <defs>
+      <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+        <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#000000" flood-opacity="0.35"/>
+      </filter>
+      <marker id="arrow" markerWidth="14" markerHeight="14" refX="10" refY="7" orient="auto" markerUnits="strokeWidth">
+        <path d="M0,0 L14,7 L0,14 z" fill="#8fb7ff"/>
+      </marker>
+      <marker id="arrowRed" markerWidth="14" markerHeight="14" refX="10" refY="7" orient="auto" markerUnits="strokeWidth">
+        <path d="M0,0 L14,7 L0,14 z" fill="#ff9aa2"/>
+      </marker>
+      <linearGradient id="card" x1="0" x2="1" y1="0" y2="1">
+        <stop offset="0%" stop-color="#131a2d"/>
+        <stop offset="100%" stop-color="#0f1527"/>
+      </linearGradient>
+      <linearGradient id="accentBlue" x1="0" x2="1" y1="0" y2="0">
+        <stop offset="0%" stop-color="#7aa2ff"/>
+        <stop offset="100%" stop-color="#52d3ff"/>
+      </linearGradient>
+      <linearGradient id="accentRed" x1="0" x2="1" y1="0" y2="0">
+        <stop offset="0%" stop-color="#ff8f8f"/>
+        <stop offset="100%" stop-color="#ffb86c"/>
+      </linearGradient>
+      <style>
+        .title { font: 700 38px Arial, sans-serif; fill: #f4f7ff; }
+        .subtitle { font: 500 18px Arial, sans-serif; fill: #b9c6e3; }
+        .h2 { font: 700 22px Arial, sans-serif; fill: #eef3ff; }
+        .text { font: 500 16px Arial, sans-serif; fill: #d8e0f5; }
+        .tiny { font: 500 14px Arial, sans-serif; fill: #aebad8; }
+        .mono { font: 600 15px 'Courier New', monospace; fill: #dce6ff; }
+        .cap { font: 700 13px Arial, sans-serif; fill: #7aa2ff; letter-spacing: 1px; }
+      </style>
+    </defs>
+    <text x="70" y="80" class="title">Four-Layer Proof Structure</text><text x="70" y="112" class="subtitle">The testing strategy proves the boundary at kernel, transport, contract, and live runtime layers.</text>
+    <g filter="url(#shadow)">
+      <rect x="480" y="200" rx="24" ry="24" width="840" height="170" fill="url(#card)" stroke="#233252" stroke-width="2"/>
+      <rect x="500" y="218" rx="8" ry="8" width="260" height="8" fill="url(#accentBlue)" opacity="0.95"/>
+      <text x="504" y="258" class="h2">Layer 1 • Firewall tests</text>
+    <text x="504" y="286" class="cap">remote-mcp-server/test_policy_firewall.py</text><text x="504" y="318" class="text">Proves normalization, blocked term matching, deterministic ordering, density</text><text x="504" y="342" class="text">thresholds, and refusal payload shape</text><text x="504" y="366" class="text">Covers zero-width, percent-encoding, punctuation split, confusables,</text><text x="504" y="390" class="text">structured nested payloads, and benign false-positive controls</text></g>
+    <g filter="url(#shadow)">
+      <rect x="390" y="430" rx="24" ry="24" width="1020" height="170" fill="url(#card)" stroke="#233252" stroke-width="2"/>
+      <rect x="410" y="448" rx="8" ry="8" width="260" height="8" fill="url(#accentBlue)" opacity="0.95"/>
+      <text x="414" y="488" class="h2">Layer 2 • Transport interceptor tests</text>
+    <text x="414" y="516" class="cap">test_transport_interceptor.py</text><text x="414" y="548" class="text">Proves pre-egress interception on the client path</text><text x="414" y="572" class="text">Blocked prompts never reach request.Request or urlopen</text><text x="414" y="596" class="text">Inspection scope is explicit: data + params only</text></g>
+    <g filter="url(#shadow)">
+      <rect x="300" y="660" rx="24" ry="24" width="1200" height="170" fill="url(#card)" stroke="#233252" stroke-width="2"/>
+      <rect x="320" y="678" rx="8" ry="8" width="260" height="8" fill="url(#accentBlue)" opacity="0.95"/>
+      <text x="324" y="718" class="h2">Layer 3 • Server contract tests</text>
+    <text x="324" y="746" class="cap">remote-mcp-server/test_server_contract.py</text><text x="324" y="778" class="text">Proves manifest/runtime alignment and client/server parity</text><text x="324" y="802" class="text">Checks shared refusal payload semantics and clean pass-through behavior</text><text x="324" y="826" class="text">Verifies strict_mode const contract on enforce_boundary</text></g>
+    <g filter="url(#shadow)">
+      <rect x="210" y="890" rx="24" ry="24" width="1380" height="170" fill="url(#card)" stroke="#233252" stroke-width="2"/>
+      <rect x="230" y="908" rx="8" ry="8" width="260" height="8" fill="url(#accentBlue)" opacity="0.95"/>
+      <text x="234" y="948" class="h2">Layer 4 • Live smoke tests</text>
+    <text x="234" y="976" class="cap">test_live_server_smoke.py</text><text x="234" y="1008" class="text">Spawns real server.py, waits for readiness, then exercises streamable HTTP MCP endpoint</text><text x="234" y="1032" class="text">Proves tool listing, safe allow path, blocked path, zero-width path probes, secret probes, semantic probes, and hostile</text><text x="234" y="1056" class="text">context</text></g><line x1="900.0" y1="378" x2="900.0" y2="418" stroke="#8fb7ff" stroke-width="5" marker-end="url(#arrow)"/><rect x="780.0" y="364.0" rx="12" ry="12" width="240" height="34" fill="#0d1324" stroke="#243456"/><text x="900.0" y="386.0" class="tiny" text-anchor="middle">next proof layer</text><line x1="900.0" y1="608" x2="900.0" y2="648" stroke="#8fb7ff" stroke-width="5" marker-end="url(#arrow)"/><rect x="780.0" y="594.0" rx="12" ry="12" width="240" height="34" fill="#0d1324" stroke="#243456"/><text x="900.0" y="616.0" class="tiny" text-anchor="middle">next proof layer</text><line x1="900.0" y1="838" x2="900.0" y2="878" stroke="#8fb7ff" stroke-width="5" marker-end="url(#arrow)"/><rect x="780.0" y="824.0" rx="12" ry="12" width="240" height="34" fill="#0d1324" stroke="#243456"/><text x="900.0" y="846.0" class="tiny" text-anchor="middle">next proof layer</text><text x="900" y="1180" class="subtitle" text-anchor="middle">Interpretation: each lower layer adds more reality. Kernel proves rules, transport proves interception, contract proves parity, live smoke proves real runtime behavior.</text></svg>

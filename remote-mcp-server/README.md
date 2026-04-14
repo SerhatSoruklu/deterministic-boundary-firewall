@@ -39,6 +39,10 @@ Non-goals:
 - Server contract tests prove the MCP server and transport agree on the same payload class.
 - Live smoke tests prove the real streamable HTTP server behavior when the MCP runtime is present.
 
+## Diagrams
+
+The shared diagram pack is available at [`../dbf_diagrams_all/`](../dbf_diagrams_all/). The root README keeps the file-by-file index for the exported architecture and proof diagrams.
+
 ## Canonical Release Gate
 
 Run the repo-level gate before ship:

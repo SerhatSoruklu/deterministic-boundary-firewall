@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1900" height="1300" viewBox="0 0 1900 1300">
+    <rect width="100%" height="100%" fill="#0b1020"/>
+    <defs>
+      <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+        <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#000000" flood-opacity="0.35"/>
+      </filter>
+      <marker id="arrow" markerWidth="14" markerHeight="14" refX="10" refY="7" orient="auto" markerUnits="strokeWidth">
+        <path d="M0,0 L14,7 L0,14 z" fill="#8fb7ff"/>
+      </marker>
+      <marker id="arrowRed" markerWidth="14" markerHeight="14" refX="10" refY="7" orient="auto" markerUnits="strokeWidth">
+        <path d="M0,0 L14,7 L0,14 z" fill="#ff9aa2"/>
+      </marker>
+      <linearGradient id="card" x1="0" x2="1" y1="0" y2="1">
+        <stop offset="0%" stop-color="#131a2d"/>
+        <stop offset="100%" stop-color="#0f1527"/>
+      </linearGradient>
+      <linearGradient id="accentBlue" x1="0" x2="1" y1="0" y2="0">
+        <stop offset="0%" stop-color="#7aa2ff"/>
+        <stop offset="100%" stop-color="#52d3ff"/>
+      </linearGradient>
+      <linearGradient id="accentRed" x1="0" x2="1" y1="0" y2="0">
+        <stop offset="0%" stop-color="#ff8f8f"/>
+        <stop offset="100%" stop-color="#ffb86c"/>
+      </linearGradient>
+      <style>
+        .title { font: 700 38px Arial, sans-serif; fill: #f4f7ff; }
+        .subtitle { font: 500 18px Arial, sans-serif; fill: #b9c6e3; }
+        .h2 { font: 700 22px Arial, sans-serif; fill: #eef3ff; }
+        .text { font: 500 16px Arial, sans-serif; fill: #d8e0f5; }
+        .tiny { font: 500 14px Arial, sans-serif; fill: #aebad8; }
+        .mono { font: 600 15px 'Courier New', monospace; fill: #dce6ff; }
+        .cap { font: 700 13px Arial, sans-serif; fill: #7aa2ff; letter-spacing: 1px; }
+      </style>
+    </defs>
+    <text x="70" y="80" class="title">Security Feature Map • Normalization, Triggering, and Density Logic</text><text x="70" y="112" class="subtitle">The firewall is deterministic and bounded. It does not claim full semantic or obfuscation coverage.</text>
+    <g filter="url(#shadow)">
+      <rect x="70" y="200" rx="24" ry="24" width="300" height="420" fill="url(#card)" stroke="#233252" stroke-width="2"/>
+      <rect x="90" y="218" rx="8" ry="8" width="260" height="8" fill="url(#accentBlue)" opacity="0.95"/>
+      <text x="94" y="258" class="h2">1. Raw input surface</text>
+    <text x="94" y="286" class="cap">stage 1</text><text x="94" y="318" class="text">text</text><text x="94" y="342" class="text">JSON data</text><text x="94" y="366" class="text">params</text><text x="94" y="390" class="text">nested metadata</text><text x="94" y="414" class="text">arrays and keys are</text><text x="94" y="438" class="text">steamrolled into one</text><text x="94" y="462" class="text">searchable surface</text></g><line x1="370" y1="410" x2="430" y2="410" stroke="#8fb7ff" stroke-width="5" marker-end="url(#arrow)"/>
+    <g filter="url(#shadow)">
+      <rect x="430" y="200" rx="24" ry="24" width="300" height="420" fill="url(#card)" stroke="#233252" stroke-width="2"/>
+      <rect x="450" y="218" rx="8" ry="8" width="260" height="8" fill="url(#accentBlue)" opacity="0.95"/>
+      <text x="454" y="258" class="h2">2. Canonicalization</text>
+    <text x="454" y="286" class="cap">stage 2</text><text x="454" y="318" class="text">percent-decode</text><text x="454" y="342" class="text">NFKC then NFKD</text><text x="454" y="366" class="text">remove format/control chars</text><text x="454" y="390" class="text">fold bounded confusables</text><text x="454" y="414" class="text">casefold</text></g><line x1="730" y1="410" x2="790" y2="410" stroke="#8fb7ff" stroke-width="5" marker-end="url(#arrow)"/>
+    <g filter="url(#shadow)">
+      <rect x="790" y="200" rx="24" ry="24" width="300" height="420" fill="url(#card)" stroke="#233252" stroke-width="2"/>
+      <rect x="810" y="218" rx="8" ry="8" width="260" height="8" fill="url(#accentBlue)" opacity="0.95"/>
+      <text x="814" y="258" class="h2">3. Surface shaping</text>
+    <text x="814" y="286" class="cap">stage 3</text><text x="814" y="318" class="text">punctuation → spaces</text><text x="814" y="342" class="text">collapse spaced letters</text><text x="814" y="366" class="text">stitch known split terms</text><text x="814" y="390" class="text">preserve path-style probes</text><text x="814" y="414" class="text">for dedicated path matching</text></g><line x1="1090" y1="410" x2="1150" y2="410" stroke="#8fb7ff" stroke-width="5" marker-end="url(#arrow)"/>
+    <g filter="url(#shadow)">
+      <rect x="1150" y="200" rx="24" ry="24" width="300" height="420" fill="url(#card)" stroke="#233252" stroke-width="2"/>
+      <rect x="1170" y="218" rx="8" ry="8" width="260" height="8" fill="url(#accentBlue)" opacity="0.95"/>
+      <text x="1174" y="258" class="h2">4. Deterministic scan</text>
+    <text x="1174" y="286" class="cap">stage 4</text><text x="1174" y="318" class="text">regex categories</text><text x="1174" y="342" class="text">literal blocked_terms</text><text x="1174" y="366" class="text">path_terms</text><text x="1174" y="390" class="text">density thresholds</text><text x="1174" y="414" class="text">infra-adjacent clustering</text></g><line x1="1450" y1="410" x2="1510" y2="410" stroke="#8fb7ff" stroke-width="5" marker-end="url(#arrow)"/>
+    <g filter="url(#shadow)">
+      <rect x="1510" y="200" rx="24" ry="24" width="300" height="420" fill="url(#card)" stroke="#233252" stroke-width="2"/>
+      <rect x="1530" y="218" rx="8" ry="8" width="260" height="8" fill="url(#accentBlue)" opacity="0.95"/>
+      <text x="1534" y="258" class="h2">5. Output contract</text>
+    <text x="1534" y="286" class="cap">stage 5</text><text x="1534" y="318" class="text">clean → {'status':'clean'}</text><text x="1534" y="342" class="text">violation → refusal payload</text><text x="1534" y="366" class="text">optional entropy_hit_count</text><text x="1534" y="390" class="text">for infra_adjacent_density_</text><text x="1534" y="414" class="text">violation</text></g>
+    <g filter="url(#shadow)">
+      <rect x="120" y="760" rx="24" ry="24" width="1660" height="360" fill="url(#card)" stroke="#233252" stroke-width="2"/>
+      <rect x="140" y="778" rx="8" ry="8" width="260" height="8" fill="url(#accentBlue)" opacity="0.95"/>
+      <text x="144" y="818" class="h2">Trigger categories and thresholds</text>
+    <text x="144" y="846" class="cap">rule families</text><text x="144" y="878" class="text">policy_override_attempt, reasoning_extraction_attempt, prompt_injection_attempt</text><text x="144" y="902" class="text">unverified_infrastructure_assertion, datacenter_proximity, physical_action_mapping</text><text x="144" y="926" class="text">infrastructure_probe, high_density_probe, infra_adjacent_density_violation, credential_exfiltration_attempt</text><text x="144" y="950" class="text">high_density_probe only appears when more than 3 unique infrastructure density terms hit in hostile context</text><text x="144" y="974" class="text">infra_adjacent_density_violation appears at threshold 4+ with hostile context, and emits entropy_hit_count</text></g>
+    <g>
+      <rect x="150" y="950" rx="14" ry="14" width="213.5" height="30" fill="#12203b" stroke="#2f4b85"/>
+      <text x="162" y="970" style="font:600 14px Arial,sans-serif; fill:#d8e7ff;">policy_override_attempt</text>
+    </g>
+    
+    <g>
+      <rect x="387.5" y="950" rx="14" ry="14" width="188.0" height="30" fill="#12203b" stroke="#2f4b85"/>
+      <text x="399.5" y="970" style="font:600 14px Arial,sans-serif; fill:#d8e7ff;">infrastructure_probe</text>
+    </g>
+    
+    <g>
+      <rect x="599.5" y="950" rx="14" ry="14" width="281.5" height="30" fill="#12203b" stroke="#2f4b85"/>
+      <text x="611.5" y="970" style="font:600 14px Arial,sans-serif; fill:#d8e7ff;">credential_exfiltration_attempt</text>
+    </g>
+    
+    <g>
+      <rect x="905.0" y="950" rx="14" ry="14" width="171.0" height="30" fill="#12203b" stroke="#2f4b85"/>
+      <text x="917.0" y="970" style="font:600 14px Arial,sans-serif; fill:#d8e7ff;">high_density_probe</text>
+    </g>
+    
+    <g>
+      <rect x="1100.0" y="950" rx="14" ry="14" width="290.0" height="30" fill="#12203b" stroke="#2f4b85"/>
+      <text x="1112.0" y="970" style="font:600 14px Arial,sans-serif; fill:#d8e7ff;">infra_adjacent_density_violation</text>
+    </g>
+    
+    <g>
+      <rect x="1414.0" y="950" rx="14" ry="14" width="213.5" height="30" fill="#12203b" stroke="#2f4b85"/>
+      <text x="1426.0" y="970" style="font:600 14px Arial,sans-serif; fill:#d8e7ff;">physical_action_mapping</text>
+    </g>
+    
+    <g>
+      <rect x="150" y="1000" rx="14" ry="14" width="315.5" height="30" fill="#12203b" stroke="#2f4b85"/>
+      <text x="162" y="1020" style="font:600 14px Arial,sans-serif; fill:#d8e7ff;">unverified_infrastructure_assertion</text>
+    </g>
+    
+    <g>
+      <rect x="489.5" y="1000" rx="14" ry="14" width="188.0" height="30" fill="#12203b" stroke="#2f4b85"/>
+      <text x="501.5" y="1020" style="font:600 14px Arial,sans-serif; fill:#d8e7ff;">datacenter_proximity</text>
+    </g>
+    
+    <g>
+      <rect x="701.5" y="1000" rx="14" ry="14" width="222.0" height="30" fill="#12203b" stroke="#2f4b85"/>
+      <text x="713.5" y="1020" style="font:600 14px Arial,sans-serif; fill:#d8e7ff;">prompt_injection_attempt</text>
+    </g>
+    
+    <g>
+      <rect x="947.5" y="1000" rx="14" ry="14" width="256.0" height="30" fill="#12203b" stroke="#2f4b85"/>
+      <text x="959.5" y="1020" style="font:600 14px Arial,sans-serif; fill:#d8e7ff;">reasoning_extraction_attempt</text>
+    </g>
+    </svg>
