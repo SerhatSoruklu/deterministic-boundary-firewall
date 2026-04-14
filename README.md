@@ -122,6 +122,19 @@ What BoundaryGate means in this repo:
 | Server contract tests | Client/server parity and manifest/runtime alignment. |
 | Live smoke tests | The real streamable HTTP MCP surface when the runtime is installed. |
 
+## Diagram Pack
+
+The exported diagram set now lives in [`dbf_diagrams_all/`](./dbf_diagrams_all/).
+
+| File | Purpose |
+| --- | --- |
+| [`01_high_level_architecture.svg`](./dbf_diagrams_all/01_high_level_architecture.svg) | High-level system view. |
+| [`02_pre_egress_sequence.svg`](./dbf_diagrams_all/02_pre_egress_sequence.svg) | Pre-egress request flow. |
+| [`03_component_relationship_map.svg`](./dbf_diagrams_all/03_component_relationship_map.svg) | Component-to-component relationships. |
+| [`04_security_feature_visualization.svg`](./dbf_diagrams_all/04_security_feature_visualization.svg) | Security feature map. |
+| [`05_testing_proof_map.svg`](./dbf_diagrams_all/05_testing_proof_map.svg) | Test and evidence map. |
+| [`06_simplified_overview.svg`](./dbf_diagrams_all/06_simplified_overview.svg) | Compact overview diagram. |
+
 ## Canonical Release Gate
 
 Run these in order before ship:

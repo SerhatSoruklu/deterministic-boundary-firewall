@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1100" viewBox="0 0 1800 1100">
+    <rect width="100%" height="100%" fill="#0b1020"/>
+    <defs>
+      <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+        <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#000000" flood-opacity="0.35"/>
+      </filter>
+      <marker id="arrow" markerWidth="14" markerHeight="14" refX="10" refY="7" orient="auto" markerUnits="strokeWidth">
+        <path d="M0,0 L14,7 L0,14 z" fill="#8fb7ff"/>
+      </marker>
+      <marker id="arrowRed" markerWidth="14" markerHeight="14" refX="10" refY="7" orient="auto" markerUnits="strokeWidth">
+        <path d="M0,0 L14,7 L0,14 z" fill="#ff9aa2"/>
+      </marker>
+      <linearGradient id="card" x1="0" x2="1" y1="0" y2="1">
+        <stop offset="0%" stop-color="#131a2d"/>
+        <stop offset="100%" stop-color="#0f1527"/>
+      </linearGradient>
+      <linearGradient id="accentBlue" x1="0" x2="1" y1="0" y2="0">
+        <stop offset="0%" stop-color="#7aa2ff"/>
+        <stop offset="100%" stop-color="#52d3ff"/>
+      </linearGradient>
+      <linearGradient id="accentRed" x1="0" x2="1" y1="0" y2="0">
+        <stop offset="0%" stop-color="#ff8f8f"/>
+        <stop offset="100%" stop-color="#ffb86c"/>
+      </linearGradient>
+      <style>
+        .title { font: 700 38px Arial, sans-serif; fill: #f4f7ff; }
+        .subtitle { font: 500 18px Arial, sans-serif; fill: #b9c6e3; }
+        .h2 { font: 700 22px Arial, sans-serif; fill: #eef3ff; }
+        .text { font: 500 16px Arial, sans-serif; fill: #d8e0f5; }
+        .tiny { font: 500 14px Arial, sans-serif; fill: #aebad8; }
+        .mono { font: 600 15px 'Courier New', monospace; fill: #dce6ff; }
+        .cap { font: 700 13px Arial, sans-serif; fill: #7aa2ff; letter-spacing: 1px; }
+      </style>
+    </defs>
+    <text x="70" y="80" class="title">Deterministic Boundary Firewall • High-Level Architecture</text><text x="70" y="112" class="subtitle">Two-component split with one shared deterministic pre-egress kernel. Based on README, app.py, server.py, policy_firewall.py, and external-documentation-ledger.md.</text>
+    <g filter="url(#shadow)">
+      <rect x="70" y="170" rx="24" ry="24" width="430" height="320" fill="url(#card)" stroke="#233252" stroke-width="2"/>
+      <rect x="90" y="188" rx="8" ry="8" width="260" height="8" fill="url(#accentBlue)" opacity="0.95"/>
+      <text x="94" y="228" class="h2">Client side</text>
+    <text x="94" y="256" class="cap">IG-04-A • client transport</text><text x="94" y="288" class="text">app.py</text><text x="94" y="312" class="text">ChatPdmTransport builds request config</text><text x="94" y="336" class="text">for OpenAI Responses API</text><text x="94" y="360" class="text">Only data + params become the firewall</text><text x="94" y="384" class="text">inspection surface</text><text x="94" y="408" class="text">Headers are transport metadata, not</text><text x="94" y="432" class="text">security inputs</text><text x="94" y="456" class="text">send() calls _request_interceptor</text><text x="94" y="480" class="text">before any request.Request or urlopen</text></g>
+    <g filter="url(#shadow)">
+      <rect x="685" y="170" rx="24" ry="24" width="430" height="320" fill="url(#card)" stroke="#233252" stroke-width="2"/>
+      <rect x="705" y="188" rx="8" ry="8" width="260" height="8" fill="url(#accentBlue)" opacity="0.95"/>
+      <text x="709" y="228" class="h2">Shared kernel</text>
+    <text x="709" y="256" class="cap">FW-TRIPWIRE-04 • level-2-strict</text><text x="709" y="288" class="text">remote-mcp-server/policy_firewall.py</text><text x="709" y="312" class="text">Level2StrictFirewall owns</text><text x="709" y="336" class="text">normalization, pattern matching,</text><text x="709" y="360" class="text">density checks, and refusal payload</text><text x="709" y="384" class="text">contract</text><text x="709" y="408" class="text">build_inspection_surface() standardizes</text><text x="709" y="432" class="text">searchable input</text><text x="709" y="456" class="text">check_or_raise() and</text><text x="709" y="480" class="text">evaluate_preflight() enforce the same</text><text x="709" y="504" class="text">rule engine everywhere</text></g>
+    <g filter="url(#shadow)">
+      <rect x="1300" y="170" rx="24" ry="24" width="430" height="320" fill="url(#card)" stroke="#233252" stroke-width="2"/>
+      <rect x="1320" y="188" rx="8" ry="8" width="260" height="8" fill="url(#accentBlue)" opacity="0.95"/>
+      <text x="1324" y="228" class="h2">MCP server side</text>
+    <text x="1324" y="256" class="cap">mcp-core-v1 • streamable-http</text><text x="1324" y="288" class="text">remote-mcp-server/server.py</text><text x="1324" y="312" class="text">FastMCP exposes</text><text x="1324" y="336" class="text">evaluate_policy_compliance and</text><text x="1324" y="360" class="text">enforce_boundary</text><text x="1324" y="384" class="text">Both tools run BoundaryGate before any</text><text x="1324" y="408" class="text">tool body returns</text><text x="1324" y="432" class="text">Clean path returns allow/allowed</text><text x="1324" y="456" class="text">contract</text><text x="1324" y="480" class="text">Violation path returns standard refusal</text><text x="1324" y="504" class="text">payload</text></g>
+    <g filter="url(#shadow)">
+      <rect x="200" y="620" rx="24" ry="24" width="420" height="240" fill="url(#card)" stroke="#233252" stroke-width="2"/>
+      <rect x="220" y="638" rx="8" ry="8" width="260" height="8" fill="url(#accentBlue)" opacity="0.95"/>
+      <text x="224" y="678" class="h2">Outbound model path</text>
+    <text x="224" y="706" class="cap">client egress</text><text x="224" y="738" class="text">POST</text><text x="224" y="762" class="text">https://api.openai.com/v1/responses</text><text x="224" y="786" class="text">Tagged with X-ChatPDM-Virtual-Rack and</text><text x="224" y="810" class="text">X-ChatPDM-Policy-Enclave headers</text><text x="224" y="834" class="text">Request proceeds only after firewall</text><text x="224" y="858" class="text">passes</text></g>
+    <g filter="url(#shadow)">
+      <rect x="1180" y="620" rx="24" ry="24" width="420" height="240" fill="url(#card)" stroke="#233252" stroke-width="2"/>
+      <rect x="1200" y="638" rx="8" ry="8" width="260" height="8" fill="url(#accentRed)" opacity="0.95"/>
+      <text x="1204" y="678" class="h2">Refusal / control path</text>
+    <text x="1204" y="706" class="cap">standard sink</text><text x="1204" y="738" class="text">ERR-403-SINK</text><text x="1204" y="762" class="text">Canonical JSON refusal payload</text><text x="1204" y="786" class="text">No network request or tool execution</text><text x="1204" y="810" class="text">on blocked input</text><text x="1204" y="834" class="text">blocked_terms + trigger_category</text><text x="1204" y="858" class="text">details + stable error contract</text></g><line x1="500" y1="330" x2="685" y2="330" stroke="#8fb7ff" stroke-width="5" marker-end="url(#arrow)"/><rect x="472.5" y="296.0" rx="12" ry="12" width="240" height="34" fill="#0d1324" stroke="#243456"/><text x="592.5" y="318.0" class="tiny" text-anchor="middle">pre-egress inspection</text><line x1="1115" y1="330" x2="1300" y2="330" stroke="#8fb7ff" stroke-width="5" marker-end="url(#arrow)"/><rect x="1087.5" y="296.0" rx="12" ry="12" width="240" height="34" fill="#0d1324" stroke="#243456"/><text x="1207.5" y="318.0" class="tiny" text-anchor="middle">same firewall reused</text><line x1="900" y1="490" x2="1410" y2="620" stroke="#ff9aa2" stroke-width="5" marker-end="url(#arrowRed)"/><rect x="1035.0" y="521.0" rx="12" ry="12" width="240" height="34" fill="#0d1324" stroke="#243456"/><text x="1155.0" y="543.0" class="tiny" text-anchor="middle">violation → refusal</text><line x1="900" y1="490" x2="410" y2="620" stroke="#8fb7ff" stroke-width="5" marker-end="url(#arrow)"/><rect x="535.0" y="521.0" rx="12" ry="12" width="240" height="34" fill="#0d1324" stroke="#243456"/><text x="655.0" y="543.0" class="tiny" text-anchor="middle">clean → outbound request</text><text x="780" y="915" class="subtitle" text-anchor="middle">Invariant: nothing leaves the client or completes a server tool path until BoundaryGate validates the payload.</text><text x="780" y="947" class="subtitle" text-anchor="middle">Client and server differ in transport surface, not in enforcement kernel.</text></svg>
