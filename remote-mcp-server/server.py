@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Any
+from typing import Any, Optional
 import sys
 
 from mcp.server.fastmcp import FastMCP  # pylint: disable=import-error
@@ -23,7 +23,7 @@ firewall = Level2StrictFirewall()
 def evaluate_policy_compliance(
     policy_id: str,
     input_text: str,
-    context: dict[str, Any] | None = None,
+    context: Optional[dict[str, Any]] = None,
 ) -> dict[str, Any]:
     if policy_id != ENCLAVE_ID:
         return PolicyViolationError(

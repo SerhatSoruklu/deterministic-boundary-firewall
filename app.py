@@ -5,7 +5,7 @@ import os
 import random
 import sys
 from pathlib import Path
-from typing import Any
+from typing import Any, Optional
 from urllib import error, request
 
 REMOTE_MCP_SERVER_DIR = Path(__file__).resolve().parent / "remote-mcp-server"
@@ -36,7 +36,7 @@ class TransportRequestRejected(Exception):
 
 
 class ChatPdmTransport:
-    def __init__(self, api_key: str, firewall: Level2StrictFirewall | None = None) -> None:
+    def __init__(self, api_key: str, firewall: Optional[Level2StrictFirewall] = None) -> None:
         self.api_key = api_key
         self.firewall = firewall or Level2StrictFirewall()
 
